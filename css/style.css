@@ -94,7 +94,7 @@ a{
     background: #821134;
 }
 
-.st-container input:checked + a::after{
+.st-container input:checked + a:after{
     content: "";
     width: 0;
     height: 0;
@@ -198,7 +198,7 @@ a{
     transform: translateY(-50%) rotate(45deg);
 }
 
-[data-icon]::after{
+[data-icon]:after{
     content: attr(data-icon);
     width: 200px;
     height: 200px;
@@ -386,5 +386,64 @@ a{
     100%{
         opacity: 1;
         -webkit-transform: translateY(0px);
+    }
+}
+
+.st-color{
+    background: #fa96b5;
+}
+
+.st-color .st-desc{
+    background: #fff;
+}
+
+.st-color [data-icon]:after{
+    color: #fa96b5;
+}
+
+.st-color h2{
+    color: #fff;
+    text-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+}
+
+.st-color p{
+    color: #fff;
+}
+
+/* 分辨率在520以下时 */
+@media screen and (max-width: 520px){
+    .st-panel h2{
+        font-size: 42px;
+    }
+    .st-panel p{
+        width: 90%;
+        left: 10%;
+        margin-top: 0;
+    }
+    .st-container > a{
+        font-size: 13px;
+    }
+}
+
+/* 分辨率在360以下时 */
+@media screen and (max-width: 360px){
+    .st-panel h2{
+        font-size: 42px;
+    }
+    .st-container > a{
+        font-size: 10px;
+    }
+    .st-desc{
+        width: 120px;
+        height: 120px;
+        margin-left: -60px;
+    }
+    [data-icon]::after{
+        font-size: 60px;
+        -webkit-transform: rotate(-45deg) translateY(15%) ;
+        -moz-transform: rotate(-45deg) translateY(15%) ;
+        -o-transform: rotate(-45deg) translateY(15%) ;
+        -ms-transform: rotate(-45deg) translateY(15%) ;
+        transform: rotate(-45deg) translateY(15%) ;
     }
 }
